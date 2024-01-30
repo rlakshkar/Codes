@@ -2,7 +2,6 @@ package ArrayLists;
 
 import java.util.ArrayList;
 public class ContainerWithMostWater {
-
 	public static void main(String[] args) {
 		ArrayList<Integer> h=new ArrayList<>();
 		h.add(1);
