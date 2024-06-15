@@ -103,17 +103,7 @@ public class IsValidBST {
 		
 		return isValidBST(root.left,min,root) && isValidBST(root.right,root,max);
 	}
-	
-	public static Node createMirror(Node root) {
-		if(root==null) {
-			return null;
-		}
-		Node left=createMirror(root.left);
-		Node right=createMirror(root.right);
-		root.left=right;
-		root.right=left;
-		return root;
-	}
+
 	public static void main(String[] args) {
 		int values[]= {5,1,3,4,2,7,8,9,6,33,45,11};
 		Node root=null;

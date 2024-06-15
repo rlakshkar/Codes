@@ -17,28 +17,29 @@ public class hasPathUsingDFS {
 		}
 	}
 	
-	public static boolean hasCycle(ArrayList<Edge> graph[]) {
+	public static boolean hasPath(ArrayList<Edge> graph[],int des) {
 		boolean v[]=new boolean[graph.length];
 		for (int i = 0; i < graph.length; i++) {
 			if(!v[i]) {
-				if(dfsUtil(graph,i,v,-1)) {
+				if(dfsUtil(graph,i,v,des)) {
 					return true;
 				}
 			}
 		}
 		return false;
 	}
-	private static boolean dfsUtil(ArrayList<Edge>[] graph,int src, boolean[] v,int par) {
+	private static boolean dfsUtil(ArrayList<Edge>[] graph,int src, boolean[] v,int des) {
+		if(src==des){
+			return true;
+		}
 		v[src]=true;
 		for (int i = 0; i < graph[src].size(); i++) {
 			Edge e = graph[src].get(i);
-			if(v[e.d] && par!=e.d) {
-				return true;
-			}else if(!v[e.d] &&dfsUtil(graph,e.d,v,src)) {
+			if(!v[e.d] && dfsUtil(graph,e.d,v,des)) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 	public static void main(String[] args) {
@@ -71,7 +72,7 @@ public class hasPathUsingDFS {
 		
 		graph[6].add(new Edge(6,5,1));
 
-		System.out.println(hasCycle(graph));
+		System.out.println(hasPath(graph,7));
 	}
 
 }

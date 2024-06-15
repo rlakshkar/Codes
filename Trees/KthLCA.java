@@ -17,7 +17,7 @@ public class KthLCA {
 		}
 	}
 	
-	public static Node kthAncestor(Node root,int n1,int n2,int k) {
+	public static Node kthLCA(Node root,int n1,int n2,int k) {
 		ArrayList<Node> p1= new ArrayList<>();
 		ArrayList<Node> p2= new ArrayList<>();
 		getPath(root,p1,n1);
@@ -59,7 +59,7 @@ public class KthLCA {
 		root.right=new Node(3);
 		root.right.left=new Node(6);
 		root.right.right=new Node(7);
-		System.out.println(kthAncestor(root,4,5,1).data);
+		System.out.println(kthLCA(root,4,5,1).data);
 
 	}
 

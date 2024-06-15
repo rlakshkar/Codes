@@ -22,6 +22,22 @@ public class PrintInRange {
 		}
 		return root;
 	}
+
+	public static void printInRange(Node root , int k1, int k2) {
+		if(root==null) {
+			return;
+		}
+		if(k1 <= root.data && root.data <= k2) {
+			printInRange(root.left,k1, k2);
+			System.out.println(root.data);
+			printInRange(root.right,k1, k2);
+		}
+		else if(root.data>k2) {
+			printInRange(root.left,k1, k2);
+		}else {
+			printInRange(root.right,k1, k2);
+		}
+	}
 	
 	public static void inOrder(Node root) {
 		if(root==null) {
@@ -80,9 +96,8 @@ public class PrintInRange {
 		for (int i = 0; i < values.length; i++) {
 			root=insert(root,values[i]);
 		}
-		inOrder(root);
-		delete(root,1);
-		inOrder(root);
+
+		printInRange(root,2,8);
 	}
 
 }

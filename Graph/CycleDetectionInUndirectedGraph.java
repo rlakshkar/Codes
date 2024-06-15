@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class CycleDetectionInUndirectedGraph {
-	static class Edge{
+	static class Edge {
 		int s;
 		int d;
 		int w;
@@ -16,27 +16,32 @@ public class CycleDetectionInUndirectedGraph {
 			this.w=w;
 		}
 	}
-	
-	public static void dfs(ArrayList<Edge> graph[]) {
+
+	public static boolean hasCycle(ArrayList<Edge> graph[]) {
 		boolean v[]=new boolean[graph.length];
 		for (int i = 0; i < graph.length; i++) {
 			if(!v[i]) {
-				dfsUtil(graph,i,v);
+				if(dfsUtil(graph,i,v,-1)) {
+					return true;
+				}
 			}
-			
 		}
+		return false;
 	}
-	private static void dfsUtil(ArrayList<Edge>[] graph,int src, boolean[] v) {
-		System.out.println(src);
+	private static boolean dfsUtil(ArrayList<Edge>[] graph, int src, boolean[] v, int par) {
 		v[src]=true;
 		for (int i = 0; i < graph[src].size(); i++) {
 			Edge e = graph[src].get(i);
-			if(!v[e.d]) {
-				dfsUtil(graph,e.d,v);
+			if(v[e.d] && par!=e.d) {
+				return true;
+			}else if(!v[e.d] &&dfsUtil(graph,e.d,v,src)) {
+				return true;
 			}
 		}
-		
+
+		return false;
 	}
+
 	public static void main(String[] args) {
 		ArrayList<Edge> graph[]= new ArrayList[7];
 		
@@ -67,7 +72,7 @@ public class CycleDetectionInUndirectedGraph {
 		
 		graph[6].add(new Edge(6,5,1));
 
-		dfs(graph);
+		System.out.println(hasCycle(graph));
 	}
 
 }

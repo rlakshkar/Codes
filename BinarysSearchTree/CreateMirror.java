@@ -89,19 +89,16 @@ public class CreateMirror {
 			printInRange(root.right,k1, k2);
 		}
 	}
-	
-	public static boolean isValidBST(Node root, Node min, Node max) {
+
+	public static Node createMirror(Node root) {
 		if(root==null) {
-			return true;
+			return null;
 		}
-		if(min!=null && root.data<=min.data) {
-			return false;
-		}
-		if(max!=null && root.data>=max.data) {
-			return false;
-		}
-		
-		return isValidBST(root.left,min,root) && isValidBST(root.right,root,max);
+		Node left=createMirror(root.left);
+		Node right=createMirror(root.right);
+		root.left=right;
+		root.right=left;
+		return root;
 	}
 	public static void main(String[] args) {
 		int values[]= {5,1,3,4,2,7,8,9,6,33,45,11};
@@ -109,7 +106,7 @@ public class CreateMirror {
 		for (int i = 0; i < values.length; i++) {
 			root=insert(root,values[i]);
 		}
-		System.out.println(isValidBST(root,null,null));
+		createMirror(root);
 	}
 
 }

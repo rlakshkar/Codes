@@ -6,7 +6,7 @@ public class Anagram {
 
 	public static void main(String[] args) {
 		String s="care";
-		String t ="ract";
+		String t ="race";
 		HashMap<Character,Integer> h=new HashMap<>();
 		
 		for(int i = 0; i <s.length(); i++) {
