@@ -1,3 +1,5 @@
+package Questions;
+
 public class LongestSubstringWithoutRepeatingCharacter {
 	  public static int longestUniqueSubsttr(String s)
 	    {

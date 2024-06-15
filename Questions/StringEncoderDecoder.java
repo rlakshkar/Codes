@@ -1,3 +1,5 @@
+package Questions;
+
 public class StringEncoderDecoder {
     public static String encode(String input) {
         StringBuilder encoded = new StringBuilder();

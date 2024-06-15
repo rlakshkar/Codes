@@ -1,3 +1,4 @@
+package Questions;
 
 public class LongestRepeatingCharacterReplacement {
 	 public static int longestRepeatingCharacterReplacement(String s , int k)
