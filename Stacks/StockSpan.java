@@ -14,7 +14,7 @@ public class StockSpan {
 				s.pop();
 			}
 			if(s.isEmpty()) {
-				span[i]=1+1;
+				span[i]=i+1;
 			}else {
 			span[i]=i-s.peek();
 			}
