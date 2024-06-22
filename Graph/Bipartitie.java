@@ -1,6 +1,7 @@
 package Graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -21,9 +22,10 @@ public class Bipartitie {
 	
 	private static boolean bipartite(ArrayList<Edge>[] graph) {
 		int col[]=new int[graph.length];
-		for (int i = 0; i < col.length; i++) {
+		/*for (int i = 0; i < col.length; i++) {
 			col[i]=-1;
-		}
+		}*/
+		Arrays.fill(col,-1);
 		Queue<Integer> q=new LinkedList<>();
 		for (int j = 0; j < col.length; j++) {
 			if(col[j]==-1) {
