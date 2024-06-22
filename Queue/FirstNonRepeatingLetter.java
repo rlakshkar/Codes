@@ -14,15 +14,9 @@ public class FirstNonRepeatingLetter {
 			while(!q.isEmpty() && freq[q.peek()-'a']>1) {
 				q.remove();
 			}
-			if(q.isEmpty()) {
-				System.out.println(-1+" ");
-			}else {
-				
-				System.out.println(q.peek()+ " ");
-			}
 			
 		}
-		System.out.println();
+		System.out.println(q.peek()+ " ");
 	}
 
 	public static void main(String[] args) {

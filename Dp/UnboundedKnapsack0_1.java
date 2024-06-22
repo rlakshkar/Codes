@@ -7,7 +7,7 @@ public class UnboundedKnapsack0_1 {
 			return 0;
 		}
 		if(w[i]<=wt) {
-			int cost1=v[i]+recursion(v,w,wt-w[i],i+1);
+			int cost1=v[i]+recursion(v,w,wt-w[i],i);
 			int cost2=recursion(v,w,wt,i+1);
 			ans=Math.max(cost1, cost2);
 		}else {
@@ -25,7 +25,7 @@ public class UnboundedKnapsack0_1 {
 			return dp[i][wt];
 		}
 		if(w[i-1]<=wt) {
-			int cost1=v[i-1]+memoisation(v,w,wt-w[i-1],i-1,dp);
+			int cost1=v[i-1]+memoisation(v,w,wt-w[i-1],i,dp);
 			int cost2=memoisation(v,w,wt,i-1,dp);
 			dp[i][wt]=Math.max(cost1, cost2);
 		}else {
@@ -63,9 +63,9 @@ public class UnboundedKnapsack0_1 {
 		int v[]= {15,14,10,45,30};
 		int w[]= {2,5,1,3,4};
 		int wt=7;
-		//System.out.println(recursion(v,w,wt,0));
-		//int dp[][]=new int[v.length+1][wt+1];
-		//System.out.println(memoisation(v,w,wt,w.length,dp));
+		System.out.println(recursion(v,w,wt,0));
+		int dp[][]=new int[v.length+1][wt+1];
+		System.out.println(memoisation(v,w,wt,w.length,dp));
 		tabulation(v,w,wt);
 	}
 }
