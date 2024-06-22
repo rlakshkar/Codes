@@ -27,8 +27,8 @@ public class Bipartitie {
 		Queue<Integer> q=new LinkedList<>();
 		for (int j = 0; j < col.length; j++) {
 			if(col[j]==-1) {
-			q.add(0);
-			col[0]=0;
+			q.add(j);
+			col[j]=0;
 			while(!q.isEmpty()) {
 				int curr =q.remove();
 				for(int i=0;i<graph[curr].size();i++) {
