@@ -13,12 +13,10 @@ public class MinimumJumps {
 			int steps=arr[i];
 			int ans=Integer.MAX_VALUE;
 			for (int j = i+1; j <=i+steps && j<n; j++) {
-				if(dp[j]!=-1) {
-					ans=Math.min(ans, dp[j]+1);
+				if (dp[j] != -1) {
+					ans = Math.min(ans, dp[j] + 1);
+					dp[i] = ans;
 				}
-			}
-			if(ans!=Integer.MAX_VALUE) {
-				dp[i]=ans;
 			}
 			
 		}
