@@ -11,7 +11,7 @@ public class MaxSubArraysSum {
 				for (int k = start; k <=end; k++) {
 					sum+=arr[k];
 				}
-					if(max<sum) {
+				if(max<sum) {
 					max=sum;
 				}
 			}
