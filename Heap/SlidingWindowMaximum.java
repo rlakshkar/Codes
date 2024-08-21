@@ -37,7 +37,7 @@ public class SlidingWindowMaximum {
 		
 		l[0]=p.peek().val;
 		for (int i = k; i < arr.length; i++) {
-			while(p.size()>0 && p.peek().index<=(i-k)) {
+			while(p.size()>0 && p.peek().index<(i-k+1)) {
 				p.remove();
 			}
 			p.add(new Pair(arr[i],i));

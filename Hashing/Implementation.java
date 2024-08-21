@@ -3,8 +3,7 @@ package Hashing;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Implementation {
-	static class HashMap<K,V>{
+class HashMap<K,V>{
 		private class Node{
 			K key;
 			V value;
@@ -13,8 +12,7 @@ public class Implementation {
 				this.value=value;
 			}
 		}
-		
-		
+
 		private int n;
 		private int N;
 		private LinkedList<Node> bucket[]; 
@@ -127,7 +125,6 @@ public class Implementation {
 		public boolean isEmpty() {
 			return n==0;
 		}
-	}
 	public static void main(String[] args) {
 		HashMap<String,Integer> h= new HashMap<>();
 		h.put("India",120);
