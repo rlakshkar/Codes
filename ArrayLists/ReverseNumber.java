@@ -11,9 +11,18 @@ public class ReverseNumber {
 		l.add(3);
 		l.add(2);
 		l.add(1);
-		
-		for(int i=l.size()-1;i>=0;i--) {
-			System.out.print(l.get(i)+" ");
+
+		int lp=0,rp=l.size()-1;
+		while(lp<rp){
+			int temp=l.get(lp);
+			l.set(lp,l.get(rp));
+			l.set(rp,temp);
+			lp++;
+			rp--;
+		}
+
+		for(Integer i: l){
+			System.out.print(i+ " ");
 		}
 		
 	}
