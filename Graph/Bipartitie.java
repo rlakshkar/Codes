@@ -29,20 +29,20 @@ public class Bipartitie {
 		Queue<Integer> q=new LinkedList<>();
 		for (int j = 0; j < col.length; j++) {
 			if(col[j]==-1) {
-			q.add(j);
-			col[j]=0;
-			while(!q.isEmpty()) {
-				int curr =q.remove();
-				for(int i=0;i<graph[curr].size();i++) {
-					Edge e=graph[curr].get(i);
-					if(col[e.d]==-1) {
-						q.add(e.d);
-						col[e.d]=col[curr]==0?1:0;
-					}else if(col[curr]==col[e.d]) {
-						return false;
+				q.add(j);
+				col[j]=0;
+				while(!q.isEmpty()) {
+					int curr =q.remove();
+					for(int i=0;i<graph[curr].size();i++) {
+						Edge e=graph[curr].get(i);
+						if(col[e.d]==-1) {
+							q.add(e.d);
+							col[e.d]=col[curr]==0?1:0;
+						}else if(col[curr]==col[e.d]) {
+							return false;
+						}
 					}
 				}
-			}
 			}
 		}
 		return true;
