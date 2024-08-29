@@ -32,12 +32,12 @@ public class BFS {
 		while(!q.isEmpty()) {
 			int curr =q.remove();
 			if(!v[curr]) {
-			System.out.println(curr);
-			v[curr]=true;
-			for(int i=0;i<graph[curr].size();i++) {
-				Edge e=graph[curr].get(i);
-				q.add(e.d);
-			}
+				System.out.println(curr);
+				v[curr]=true;
+				for(int i=0;i<graph[curr].size();i++) {
+					Edge e=graph[curr].get(i);
+					q.add(e.d);
+				}
 			}
 			
 		}
