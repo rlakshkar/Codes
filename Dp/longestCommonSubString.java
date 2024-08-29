@@ -11,8 +11,7 @@ public class longestCommonSubString {
 			maxlength=Math.max(maxlength, recursion(s1,s2,i+1,j+1,currlength+1));
 		}
 
-		maxlength=Math.max(maxlength, recursion(s1,s2,i+1,j,0));
-		maxlength=Math.max(maxlength, recursion(s1,s2,i,j+1,0));
+		maxlength=Math.max(maxlength, Math.max(recursion(s1,s2,i+1,j,0),recursion(s1,s2,i,j+1,0)));
 
 		return maxlength;
 	}
