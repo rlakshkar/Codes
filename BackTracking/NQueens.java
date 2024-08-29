@@ -26,7 +26,7 @@ public class NQueens {
 	public static void nQueens(char matrix[][],int row) {
 		if(row==matrix.length) {
 			for (int i = 0; i < matrix.length; i++) {
-				for (int j = 0; j < matrix.length; j++) {
+				for (int j = 0; j < matrix[0].length; j++) {
 					System.out.print(matrix[i][j]+ " ");
 				}
 				System.out.println("");
