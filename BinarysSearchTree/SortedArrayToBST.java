@@ -59,7 +59,7 @@ public class SortedArrayToBST {
 		if(i>j) {
 			return null;
 		}
-		int mid=(i+j)/2;
+		int mid=i+(j-i)/2;
 		Node root=new Node(values[mid]);
 		root.left=sortedArrayToBST(values,i,mid-1);
 		root.right=sortedArrayToBST(values,mid+1,j);
