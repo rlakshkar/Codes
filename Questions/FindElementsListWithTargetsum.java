@@ -16,7 +16,12 @@ public class FindElementsListWithTargetsum {
 
     public static void findFourSum(int[] array, int target, int start, List<Integer> current, List<List<Integer>> result) {
         if (current.size() == 4) {
-            int sum = current.stream().mapToInt(Integer::intValue).sum();
+            int sum = 0;
+
+            for(int i=0;i<current.size();i++){
+                sum+= current.get(i);
+            }
+
             if (sum == target) {
                 result.add(new ArrayList<>(current));
             }
