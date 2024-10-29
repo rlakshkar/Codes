@@ -1,7 +1,6 @@
 package ArrayLists;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class FindMaximum {
 
